@@ -11,6 +11,9 @@ function Homepage(): JSX.Element {
       <Link to="/deck" className="mt-4 text-lg underline">
         <p className="text-blue-600">Go to your deck</p>
       </Link>
+      <Link to="/ping" className="mt-4 text-lg underline">
+        <p className="text-blue-600">Ping</p>
+      </Link>
     </div>
   )
 }
