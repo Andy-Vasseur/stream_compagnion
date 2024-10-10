@@ -2,13 +2,13 @@
 const express = require('express')
 
 // Controllers imports
-const mainController = require('../controllers/mainController')
+const userController = require('../controllers/userController')
 
 // Router
 const router = express.Router()
 
 // Routes
-router.get('/', mainController.renderHomePage)
+router.get('/', userController.getAllUsers)
 
 // Exports
 module.exports = router
