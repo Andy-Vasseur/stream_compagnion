@@ -14,9 +14,6 @@ function Homepage(): JSX.Element {
       <Link to="/preferences" className="mt-4 text-lg underline">
         <p className="text-blue-600">Préférences</p>
       </Link>
-      <Link to="/ping" className="mt-4 text-lg underline">
-        <p className="text-blue-600">Ping</p>
-      </Link>
     </div>
   )
 }

@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(router)
 
 app.get('/ping', (req, res) => {
-  res.json({ message: 'pong', timestamp: new Date() })
+  res.json({ message: 'Connexion établie !', timestamp: new Date() })
 })
 
 const PORT = process.env.PORT || 3310

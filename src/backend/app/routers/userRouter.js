@@ -9,6 +9,7 @@ const router = express.Router()
 
 // Routes
 router.get('/', userController.getAllUsers)
+router.patch('/preferences', userController.addPreference)
 
 // Exports
 module.exports = router

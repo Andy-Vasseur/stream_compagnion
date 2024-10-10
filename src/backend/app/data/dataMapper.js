@@ -9,6 +9,14 @@ const dataMapper = {
     }
     const result = await client.query(query)
     return result.rows
+  },
+
+  async newPreference(name, accent_color) {
+    const query = {
+      text: 'UPDATE users SET name = $1, accent_color = $2 WHERE id = 1',
+      values: [name, accent_color]
+    }
+    await client.query(query)
   }
 }
 
