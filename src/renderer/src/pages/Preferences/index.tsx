@@ -14,6 +14,8 @@ function Preferences(): JSX.Element {
     const name = formData.get('name') as string
     const accent_color = formData.get('color') as string
 
+    localStorage.setItem('username', name)
+
     try {
       await axios.patch('http://localhost:3310/user/preferences', {
         name,
