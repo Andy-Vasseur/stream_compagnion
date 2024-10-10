@@ -6,7 +6,7 @@ function Homepage(): JSX.Element {
 
   return (
     <div>
-      <h1 className="text-3xl font-semibold underline">Hey, {username}</h1>
+      <h1 className="text-3xl font-bold underline">Hey, {username}</h1>
       <p className="mt-4 text-lg">Welcome to your Stream Compagnion!</p>
       <p className="mt-4 mb-6 text-lg">
         This is a simple app to help you manage your streaming experience.
