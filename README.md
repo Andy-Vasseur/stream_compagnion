@@ -89,7 +89,7 @@ MIT License
 
 Copyright (c) 2024 Andy Vasseur
 
-Permission est par la présente accordée, sans frais, à toute personne obtenant une copie de ce logiciel et des fichiers de documentation associés (le "Logiciel"), de traiter le Logiciel sans restriction, y compris sans limitation les droits d'utiliser, de copier, de modifier, de fusionner, de publier, de distribuer, de sous-licencier et/ou de vendre des copies du Logiciel, et d'autoriser les personnes à qui le Logiciel est fourni à le faire, sous réserve des conditions suivantes :
+Permission est par la présente accordée, sans frais, à toute personne obtenant une copie de ce logiciel et des fichiers de documentation associés ("Stream Compagnion"), de traiter le Logiciel sans restriction, y compris sans limitation les droits d'utiliser, de copier, de modifier, de fusionner, de publier, de distribuer, de sous-licencier et/ou de vendre des copies du Logiciel, et d'autoriser les personnes à qui le Logiciel est fourni à le faire, sous réserve des conditions suivantes :
 
 La mention de copyright ci-dessus et cette mention de permission doivent être incluses dans toutes les copies ou parties substantielles du Logiciel.
 
