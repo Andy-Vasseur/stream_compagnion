@@ -1,4 +1,7 @@
 import { useState, useCallback } from 'react'
+import axios from 'axios'
+
+// Components
 import Modal from '../../components/Modal'
 
 interface DeckButton {
@@ -50,21 +53,35 @@ function Deck(): JSX.Element {
     setIsModalOpen(false)
   }, [])
 
-  const addNewButton = useCallback((): void => {
-    if (newButtonLabel.trim() !== '') {
-      const newId = buttons.length + 1
-      const newButton: DeckButton = {
-        id: newId,
-        label: newButtonLabel.trim(),
-        action: () => console.log(`Button ${newId} clicked`)
+  const addNewButton = useCallback(
+    async (event: React.FormEvent): Promise<void> => {
+      event.preventDefault()
+      if (newButtonLabel.trim() !== '') {
+        const newId = buttons.length + 1
+        const newButton: DeckButton = {
+          id: newId,
+          label: newButtonLabel.trim(),
+          action: () => console.log(`Button ${newId} clicked`)
+        }
+
+        try {
+          await axios.post('http://localhost:3310/deck', {
+            id: newButton.id,
+            name: newButton.label
+          })
+
+          setButtons((prevButtons) => [...prevButtons, newButton])
+          closeModal()
+        } catch (error) {
+          console.error("Erreur lors de l'ajout du bouton:", error)
+        }
       }
-      setButtons((prevButtons) => [...prevButtons, newButton])
-      closeModal()
-    }
-  }, [buttons.length, newButtonLabel, closeModal])
+    },
+    [buttons.length, newButtonLabel, closeModal]
+  )
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
+    <div className="bg-neutral-900 p-6 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold text-white mb-6">Stream Deck</h1>
       <div className="grid grid-cols-4 gap-4">
         {buttons.map((button) => (
@@ -87,21 +104,22 @@ function Deck(): JSX.Element {
       </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal} title="Ajouter un nouveau bouton">
-        <div className="space-y-4">
+        <form method="post" className="space-y-4">
           <input
             type="text"
             value={newButtonLabel}
+            name="name"
             onChange={(e) => setNewButtonLabel(e.target.value)}
             placeholder="Nom du bouton"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 text-neutral-900 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
-            onClick={addNewButton}
+            onClick={(e) => addNewButton(e)}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200"
           >
             Ajouter
           </button>
-        </div>
+        </form>
       </Modal>
     </div>
   )
