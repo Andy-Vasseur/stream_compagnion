@@ -20,9 +20,7 @@ function Deck(): JSX.Element {
     { id: 5, label: 'Camera', action: (): void => toggleButton(5), isToggled: false },
     { id: 6, label: 'Screen', action: (): void => toggleButton(6), isToggled: false },
     { id: 7, label: 'Layout 1', action: (): void => console.log('Switching to Layout 1') },
-    { id: 8, label: 'Layout 2', action: (): void => console.log('Switching to Layout 2') },
-    { id: 9, label: 'Layout 3', action: (): void => console.log('Switching to Layout 3') },
-    { id: 10, label: 'Layout 4', action: (): void => console.log('Switching to Layout 4') }
+    { id: 8, label: 'Layout 2', action: (): void => console.log('Switching to Layout 2') }
   ])
 
   const [isModalOpen, setIsModalOpen] = useState(false)
